@@ -1,0 +1,132 @@
+* {
+	&,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
+html,
+body {
+	margin: 0;
+}
+body {
+	background-color: #fff;
+	color: #333;
+	font-family: 'Noto Sans SC', sans-serif;
+	font-size: 1.2em;
+	line-height: 1.5;
+}
+p {
+	margin-top: 0px;
+	margin-bottom: 1em;
+}
+a,
+input,
+button {
+	&,
+	&:active,
+	&:focus {
+		outline: none;
+		outline-style: unset;
+		outline-color: transparent;
+	}
+}
+a {
+	color: red;
+}
+.clearfix {
+	&::before,
+	&::after {
+		display: table;
+		content: "";
+	}
+	&::after {
+		clear: both;
+	}
+}
+.text {
+	&-left {
+		text-align: left;
+	}
+	&-right {
+		text-align: right;
+	}
+	&-center {
+		text-align: center;
+	}
+	&-justify {
+		text-align: justify;
+	}
+}
+.main{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	> header,
+	> main,
+	>footer {
+		display: block;
+		.clearfix();
+	}
+	> main,
+	> footer {
+		flex-shrink: 0;
+	}
+	> header,
+	>footer {
+		padding: 15px;
+		position: relative;
+		line-height: 1;
+	}
+	> header {
+		
+	}
+	> main {
+		flex-basis: 100%;
+		flex-grow: 1;
+		background-position: center bottom;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-image: url('assets/images/background.png');
+		padding-top: 15px;
+		padding-bottom: 35px;
+	}
+	> footer {
+		flex-basis: auto;
+		flex-grow: 0;
+	}
+}
+.box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	.left,
+	.right {
+		padding-left: 15px;
+		padding-right: 15px;
+		img {
+			display: block;
+			max-width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	.left {
+		width: 100%;
+	}
+	.right {
+		width: 100%;
+	}
+	@media(min-width: 992px) {
+		flex-wrap: nowrap;
+		.left {
+			width: 25%;
+		}
+		.right {
+			width: 75%;
+		}
+	}
+}

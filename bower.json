@@ -1,0 +1,27 @@
+{
+  "name": "fontmassivepackinstaller",
+  "description": "FontMassive Pack - Набор программ для работы со шрифтами. Официальная страница FontMassive Pack - https://fontmassive.com/",
+  "main": "package.json",
+  "authors": [
+    "ProjectSoft <projectsoft2009@yandex.ru>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "FontMassive",
+    "FonTemp",
+    "FontDetect",
+    "Circular",
+    "LinearText"
+  ],
+  "homepage": "https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.4.0"
+  }
+}

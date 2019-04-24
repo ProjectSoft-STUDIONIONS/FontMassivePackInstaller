@@ -1,0 +1,53 @@
+{
+	"name": "fontmassivepackinstaller",
+	"version": "1.0.0",
+	"description": "FontMassive Pack - Набор программ для работы со шрифтами. Официальная страница FontMassive Pack - https://fontmassive.com/",
+	"main": "package.json",
+	"directories": {
+		"doc": "docs"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller.git"
+	},
+	"keywords": [
+		"FontMassive",
+		"FonTemp",
+		"FontDetect",
+		"Circular",
+		"LinearText"
+	],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/issues"
+	},
+	"homepage": "https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller#readme",
+	"devDependencies": {
+		"grunt": "^1.0.3",
+		"grunt-autoprefixer": "^3.0.4",
+		"grunt-bower-server": "0.0.0",
+		"grunt-concurrent": "^2.3.1",
+		"grunt-contrib-clean": "^2.0.0",
+		"grunt-contrib-concat": "^1.0.1",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-contrib-cssmin": "^3.0.0",
+		"grunt-contrib-imagemin": "^3.1.0",
+		"grunt-contrib-less": "^2.0.0",
+		"grunt-contrib-pug": "^2.0.0",
+		"grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
+		"grunt-contrib-watch": "^1.1.0",
+		"grunt-group-css-media-queries": "^1.0.1",
+		"grunt-notify": "git+https://github.com/ProjectSoft-STUDIONIONS/grunt-notify.git",
+		"grunt-replace": "^1.0.1",
+		"grunt-tinyimg": "^1.0.0",
+		"load-grunt-tasks": "^4.0.0",
+		"time-grunt": "^2.0.0"
+	},
+	"dependencies": {
+		"uglify-es": "github:mishoo/UglifyJS2#harmony"
+	}
+}
