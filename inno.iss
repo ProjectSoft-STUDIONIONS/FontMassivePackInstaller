@@ -1,6 +1,6 @@
 [Setup]
 AppName=FontMassive Pack
-AppVersion=3.0.21
+AppVersion=3.0.23
 AppCopyright=Copyright © 2014 Алексей Коноплев aka KLesha28
 PrivilegesRequired=admin
 DefaultDirName={pf}\FontMassive
@@ -24,14 +24,14 @@ WizardSmallImageFile=embed/logo.bmp
 SetupIconFile=embed/icon.ico
 ShowLanguageDialog=no
 UninstallDisplayName=Удалить FontMassive Pack
-VersionInfoVersion=3.0.21
+VersionInfoVersion=3.0.23
 VersionInfoCompany=FontMassive Pack
 VersionInfoDescription=Сборка инсталяции для программы FontMassive Pack
-VersionInfoTextVersion=3.0.21
+VersionInfoTextVersion=3.0.23
 VersionInfoCopyright=Copyright © 2014 Алексей Коноплев aka KLesha28
 VersionInfoProductName=FontMassive Pack
-VersionInfoProductVersion=3.0.21
-VersionInfoProductTextVersion=3.0.21
+VersionInfoProductVersion=3.0.23
+VersionInfoProductTextVersion=3.0.23
 AppMutex=FontMassive Pack
 AppId={{39CA51DC-A5E5-4BAC-8339-9C6E378394E5}}
 AppPublisher=Алексей Коноплев (KLesha28)

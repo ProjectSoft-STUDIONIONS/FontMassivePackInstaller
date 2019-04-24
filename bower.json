@@ -20,8 +20,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "devDependencies": {
-    "jquery": "^3.4.0"
-  }
+  ]
 }
