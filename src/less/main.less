@@ -157,10 +157,12 @@ h1 {
 		.widgets {
 			margin-left: -15px;
 			margin-right: -15px;
+			margin-bottom: 0px;
 			.flex {
 				display: flex;
 				flex-wrap: wrap;
 				flex-direction: row;
+				margin-bottom: 0px;
 				span {
 					display: block;
 					padding-left: 15px;
@@ -186,6 +188,43 @@ h1 {
 		}
 		.right {
 			width: 75%;
+		}
+	}
+}
+.view-on-github {
+	a.gitlink {
+		text-decoration: none;
+		display: inline-flex;
+		flex-direction: row;
+		align-items: center;
+		flex-wrap: nowrap;
+		padding: 15px;
+		white-space: nowrap;
+		border-radius: 50px;
+		overflow: hidden;
+		transition: all .3s ease;
+		&,
+		&:focus {
+			border: 1px solid #ccc;
+			background-color: #fff;
+			color: #007ec6;
+		}
+		&:hover {
+			border: 1px solid #fff;
+			color: #fff;
+			background-color: #007ec6;
+			box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.36);
+		}
+		> img {
+			margin-right: 10px !important;
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			padding: 5px;
+			border-radius: 50%;
+			overflow: hidden;
+			background-color: #fff;
+			object-fit: contain;
 		}
 	}
 }
