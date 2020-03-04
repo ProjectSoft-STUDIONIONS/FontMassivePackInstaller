@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/github/release/ProjectSoft-STUDIONIONS/FontMassivePackInstaller.svg?style=for-the-badge) ![](https://img.shields.io/github/license/ProjectSoft-STUDIONIONS/FontMassivePackInstaller.svg?style=for-the-badge) ![](https://img.shields.io/github/downloads/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/total.svg?label=%D0%A1%D0%9A%D0%90%D0%A7%D0%95%D0%9D%D0%9E&style=for-the-badge) ![](https://img.shields.io/github/repo-size/ProjectSoft-STUDIONIONS/FontMassivePackInstaller.svg?style=for-the-badge)
 
-Скачать: [![FontMassivePack.exe](https://monosnap.com/image/NVsWoYjildICry0al7JX9AXPQfI7IZ.png "FontMassivePack.exe")](https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/releases/download/3.0.24/FontMassivePack.exe) 
+Скачать: [![FontMassivePack.exe](https://img.shields.io/github/downloads/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/total.svg?label=%D0%A1%D0%9A%D0%90%D0%A7%D0%95%D0%9D%D0%9E&style=for-the-badge "FontMassivePack.exe")](https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/releases/download/3.0.24/FontMassivePack.exe) 
 
 ![](https://projectsoft-studionions.github.io/FontMassivePackInstaller/assets/images/application.png)
 
