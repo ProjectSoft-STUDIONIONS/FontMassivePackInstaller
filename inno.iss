@@ -126,3 +126,9 @@ Type: filesandordirs; Name: {app}\FM3_Data
 Type: filesandordirs; Name: {app}\FT_Data
 Type: filesandordirs; Name: {app}\FD_Data
 Type: filesandordirs; Name: {app}
+
+[Run]
+Filename: {app}\FonTemp.EXE; Description: Запустить Менеджер коллекций шрифтов; Flags: postinstall nowait skipifsilent unchecked
+Filename: {app}\FontMassive.EXE; Description: Запустить FontMassive; Flags: postinstall nowait skipifsilent runminimized unchecked
+Filename: {app}\FM3_Data\Readme_ru.txt; Description: Просмотреть файл README; Flags: postinstall shellexec skipifsilent unchecked
+Filename: {app}\FM3_Data\History_ru.txt; Description: Просмотреть Историю изменений; Flags: postinstall shellexec skipifsilent unchecked
