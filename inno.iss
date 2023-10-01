@@ -1,5 +1,5 @@
 #define AppName "FontMassive Pack"
-#define AppVersion "3.0.24"
+#define AppVersion "3.0.25"
 #define GitReleace "https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/releases"
 #define AppCopyright "Copyright © 2014 Алексей Коноплев aka KLesha28"
 #define AppPublisher "Алексей Коноплев (KLesha28)"
@@ -76,36 +76,37 @@ Name: rus; MessagesFile: lang/Russian.isl
 [Dirs]
 Name: {app}\FM3_Data
 Name: {app}\FT_Data
-Name: {app}\FD_Data
+Name: {app}\FD_Data  
+Name: {app}\LT_data
 
 [Files]
 Source: embed\splash.bmp; DestDir: {tmp}; Flags: deleteafterinstall noencryption dontcopy
 Source: embed\icon.ico; DestDir: {app}; DestName: icon.ico
-Source: source\FontCache_Restore.cmd; DestDir: {app}; DestName: FontCache_Restore.cmd
-Source: source\FontCache_Stop.cmd; DestDir: {app}; DestName: FontCache_Stop.cmd
+Source: source\FontMassive Pack\FontCache_Restore.cmd; DestDir: {app}; DestName: FontCache_Restore.cmd
+Source: source\FontMassive Pack\FontCache_Stop.cmd; DestDir: {app}; DestName: FontCache_Stop.cmd
 ; Place all x64 files here
-Source: source\FontMassive64.exe; DestDir: {app}; DestName: FontMassive.exe; Check: Is64BitInstallMode
-Source: source\FonTemp64.exe; DestDir: {app}; DestName: FonTemp.exe; Check: Is64BitInstallMode
-Source: source\FontDetect64.exe; DestDir: {app}; DestName: FontDetect.exe; Check: Is64BitInstallMode
-Source: source\Circular64.exe; DestDir: {app}; DestName: Circular.exe; Check: Is64BitInstallMode
-Source: source\LinearText64.exe; DestDir: {app}; DestName: LinearText.exe; Check: Is64BitInstallMode
+Source: source\FontMassive Pack\FontMassive64.exe; DestDir: {app}; DestName: FontMassive.exe; Check: Is64BitInstallMode
+Source: source\FontMassive Pack\FonTemp64.exe; DestDir: {app}; DestName: FonTemp.exe; Check: Is64BitInstallMode
+Source: source\FontMassive Pack\FontDetect64.exe; DestDir: {app}; DestName: FontDetect.exe; Check: Is64BitInstallMode
+Source: source\FontMassive Pack\Circular64.exe; DestDir: {app}; DestName: Circular.exe; Check: Is64BitInstallMode
+Source: source\FontMassive Pack\LinearText64.exe; DestDir: {app}; DestName: LinearText.exe; Check: Is64BitInstallMode
 ; Place all x86 files here, first one should be marked 'solidbreak'
-Source: source\FontMassive.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
-Source: source\FonTemp.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
-Source: source\FontDetect.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
-Source: source\Circular.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
-Source: source\LinearText.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
+Source: source\FontMassive Pack\FontMassive.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
+Source: source\FontMassive Pack\FonTemp.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
+Source: source\FontMassive Pack\FontDetect.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
+Source: source\FontMassive Pack\Circular.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
+Source: source\FontMassive Pack\LinearText.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
 ; Place all common files here, first one should be marked 'solidbreak'
-Source: source\FM3_Data\eng.lang; DestDir: {app}\FM3_Data
-Source: source\FM3_Data\ukr.lang; DestDir: {app}\FM3_Data
-Source: source\FM3_Data\zhs.lang; DestDir: {app}\FM3_Data
-Source: source\FM3_Data\History_ru.txt; DestDir: {app}\FM3_Data
-Source: source\FM3_Data\License_ru.txt; DestDir: {app}\FM3_Data
-Source: source\FD_Data\License_ru.txt; DestDir: {app}\FD_Data
-Source: source\FT_Data\History_ru.txt; DestDir: {app}\FT_Data
-Source: source\FT_Data\License_ru.txt; DestDir: {app}\FT_Data
-Source: source\FT_Data\Readme_ru.txt; DestDir: {app}\FT_Data
-Source: source\FT_Data\eng.lang; DestDir: {app}\FT_Data
+Source: source\FontMassive Pack\FM3_Data\eng.lang; DestDir: {app}\FM3_Data
+Source: source\FontMassive Pack\FM3_Data\ukr.lang; DestDir: {app}\FM3_Data
+Source: source\FontMassive Pack\FM3_Data\zhs.lang; DestDir: {app}\FM3_Data
+Source: source\FontMassive Pack\FM3_Data\History_ru.txt; DestDir: {app}\FM3_Data
+Source: source\FontMassive Pack\FM3_Data\License_ru.txt; DestDir: {app}\FM3_Data
+Source: source\FontMassive Pack\FD_Data\License_ru.txt; DestDir: {app}\FD_Data
+Source: source\FontMassive Pack\FT_Data\History_ru.txt; DestDir: {app}\FT_Data
+Source: source\FontMassive Pack\FT_Data\License_ru.txt; DestDir: {app}\FT_Data
+Source: source\FontMassive Pack\FT_Data\Readme_ru.txt; DestDir: {app}\FT_Data
+Source: source\FontMassive Pack\FT_Data\eng.lang; DestDir: {app}\FT_Data
 
 [Icons]
 Name: {userprograms}\FontMassive Pack\Менеджер шрифтов; Filename: {app}\FontMassive.exe; Tasks: startmenu
@@ -121,10 +122,12 @@ Name: startmenu; Description: Создать ярлыки в меню Программы; GroupDescription:
 
 [UninstallDelete]
 Type: files; Name: {app}\FM3_Data\settings.ini
-Type: files; Name: {app}\FT_Data\settings.ini
+Type: files; Name: {app}\FT_Data\settings.ini    
+Type: files; Name: {app}\LT_data\settings.ini 
 Type: filesandordirs; Name: {app}\FM3_Data
 Type: filesandordirs; Name: {app}\FT_Data
-Type: filesandordirs; Name: {app}\FD_Data
+Type: filesandordirs; Name: {app}\FD_Data   
+Type: filesandordirs; Name: {app}\LT_data
 Type: filesandordirs; Name: {app}
 
 [Run]

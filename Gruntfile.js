@@ -113,7 +113,7 @@ module.exports = function(grunt){
 			develop: {
 				options: {
 					//api: './mock',
-					port: 80,
+					port: 3003,
 					base: 'docs/',
 					release: false
 				}
@@ -141,6 +141,16 @@ module.exports = function(grunt){
 		},
 	});
 	grunt.registerTask('default', [
+		'imagemin',
+		'tinyimg',
+		'less',
+		'autoprefixer',
+		'group_css_media_queries',
+		'cssmin',
+		'uglify',
+		'pug'
+	]);
+	grunt.registerTask('develop', [
 		'watch',
 	]);
 	grunt.registerTask('server', [

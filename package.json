@@ -1,6 +1,6 @@
 {
 	"name": "fontmassivepackinstaller",
-	"version": "3.0.23",
+	"version": "3.0.25",
 	"description": "FontMassive Pack - Набор программ для работы со шрифтами. Официальная страница FontMassive Pack - https://fontmassive.com/",
 	"main": "package.json",
 	"directories": {

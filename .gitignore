@@ -1,2 +1,7 @@
 installer/**/*.*
+node_modules
+bower_components
+test
+tests
 *.sublime-workspace
+source/*.zip
