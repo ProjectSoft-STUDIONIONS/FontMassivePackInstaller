@@ -1,6 +1,7 @@
-installer/**/*.*
 node_modules
 bower_components
+.cache
+installer/**/*.*
 test
 tests
 *.sublime-workspace

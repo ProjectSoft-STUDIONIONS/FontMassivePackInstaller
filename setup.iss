@@ -7,7 +7,7 @@
 #define AppEmail "support@fontmassive.com"
 #define InstallBuilder "ProjectSoft"
 #define InstallBuilderUrl "https://projectsoft-studionions.github.io/FontMassivePackInstaller/"
-#define Source "source\FontMassivePack"
+#define Source "source\FontMassive Pack"
 
 [Setup]
 AppId={{17215FF5-7CC0-4E50-8D24-FC5D6C1CFE67}
@@ -21,7 +21,7 @@ AppSupportURL={#AppUrl}
 AppContact={#AppEmail}
 AppComments=Сборка инсталяции для программы {#AppName}
 AppReadmeFile={app}\FM3_Data\Readme_ru.txt
-InfoBeforeFile={#Source}\app.rtf
+InfoBeforeFile=source\History.rtf
 
 VersionInfoVersion={#AppVersion}
 VersionInfoCompany={#AppName}
@@ -83,7 +83,7 @@ Name: {app}\LT_data
 [Files]
 Source: embed\splash.bmp; DestDir: {tmp}; Flags: deleteafterinstall noencryption dontcopy
 Source: embed\icon.ico; DestDir: {app}; DestName: icon.ico     
-Source: {#Source}\app.rtf; DestDir: {app}; DestName: History.rtf
+Source: source\History.rtf; DestDir: {app}; DestName: History.rtf
 Source: {#Source}\FontCache_Restore.cmd; DestDir: {app}; DestName: FontCache_Restore.cmd
 Source: {#Source}\FontCache_Stop.cmd; DestDir: {app}; DestName: FontCache_Stop.cmd
 
@@ -91,24 +91,23 @@ Source: {#Source}\FontCache_Stop.cmd; DestDir: {app}; DestName: FontCache_Stop.c
 Source: {#Source}\FontMassive64.exe; DestDir: {app}; DestName: FontMassive.exe; Check: Is64BitInstallMode
 Source: {#Source}\FonTemp64.exe; DestDir: {app}; DestName: FonTemp.exe; Check: Is64BitInstallMode
 Source: {#Source}\FontDetect64.exe; DestDir: {app}; DestName: FontDetect.exe; Check: Is64BitInstallMode
-Source: {#Source}\Circular64.exe; DestDir: {app}; DestName: Circular.exe; Check: Is64BitInstallMode
-Source: {#Source}\LinearText64.exe; DestDir: {app}; DestName: LinearText.exe; Check: Is64BitInstallMode
 Source: {#Source}\FontQuickView64.exe; DestDir: {app}; DestName: FontQuickView.exe; Check: Is64BitInstallMode
 
 ; Place all x86 files here, first one should be marked 'solidbreak'
 Source: {#Source}\FontMassive.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
 Source: {#Source}\FonTemp.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
-Source: {#Source}\FontDetect.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
-Source: {#Source}\Circular.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
-Source: {#Source}\LinearText.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak  
+Source: {#Source}\FontDetect.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak   
 Source: {#Source}\FontQuickView.exe; DestDir: {app}; Check: not Is64BitInstallMode; Flags: solidbreak
+
+; add files x86
+Source: {#Source}\Circular.exe; DestDir: {app}; DestName: Circular.exe
+Source: {#Source}\LinearText.exe; DestDir: {app}; DestName: LinearText.exe
 
 ; Place all common files here, first one should be marked 'solidbreak'                               
 Source: {#Source}\FD_Data\*; DestDir: {app}\FD_Data; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: {#Source}\FM3_Data\*; DestDir: {app}\FM3_Data; Flags: ignoreversion recursesubdirs createallsubdirs  
 Source: {#Source}\FQ_Data\*; DestDir: {app}\FQ_Data; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: {#Source}\FT_Data\*; DestDir: {app}\FT_Data; Flags: ignoreversion recursesubdirs createallsubdirs  
-Source: {#Source}\LT_data\*; DestDir: {app}\LT_data; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: {#Source}\FT_Data\*; DestDir: {app}\FT_Data; Flags: ignoreversion recursesubdirs createallsubdirs 
 
 [Icons]
 Name: {userprograms}\FontMassive Pack\Менеджер шрифтов; Filename: {app}\FontMassive.exe
@@ -124,7 +123,7 @@ Type: filesandordirs; Name: {app}\FD_Data
 Type: filesandordirs; Name: {app}\FM3_Data    
 Type: filesandordirs; Name: {app}\FQ_Data
 Type: filesandordirs; Name: {app}\FT_Data  
-Type: filesandordirs; Name: {app}\LT_data 
+Type: filesandordirs; Name: {app}\LT_Data 
 Type: filesandordirs; Name: {app}
 
 [Run]

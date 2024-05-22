@@ -1,10 +1,28 @@
 module.exports = function(grunt){
+	process.removeAllListeners('warning');
+	require('dotenv').config();
 	require('load-grunt-tasks')(grunt);
 	require('time-grunt')(grunt);
-	var gc = {};
+	grunt.loadNpmTasks('innosetup-compiler');
+	require('./modules/Versions.js')(grunt);
+	require('./modules/Downloader.js')(grunt);
+
+	var gc = {},
+		pkg = grunt.file.readJSON('package.json');
+
 	grunt.initConfig({
 		globalConfig : gc,
-		pkg : grunt.file.readJSON('package.json'),
+		pkg : pkg,
+		downloader: {
+			base: {}
+		},
+		version_edit: {
+			default: {
+				options: {
+					pkg: pkg,
+				}
+			}
+		},
 		imagemin: {
 			base: {
 				options: {
@@ -82,7 +100,13 @@ module.exports = function(grunt){
 			files: {
 				options: {
 					pretty: '\t',
-					separator:  '\n'
+					separator:  '\n',
+					// https://projectsoft-studionions.github.io/FontMassivePackInstaller/
+					data: function(dest, src) {
+						return {
+							"base": "https://projectsoft-studionions.github.io/FontMassivePackInstaller/",
+						}
+					}
 				},
 				files: {
 					"docs/index.html": ['src/pug/index.pug'],
@@ -101,6 +125,15 @@ module.exports = function(grunt){
 					]
 				}
 			},
+		},
+		innosetup: {
+			default: {
+				options: {
+					gui: false,
+					verbose: true,
+				},
+				script: __dirname + "/setup.iss"
+			}
 		},
 		bower_server: {
 			develop: {
@@ -133,13 +166,17 @@ module.exports = function(grunt){
 		},
 	});
 	grunt.registerTask('default', [
+		'version_edit',
+		'downloader',
 		'imagemin',
 		'tinyimg',
 		'less',
 		'autoprefixer',
 		'cssmin',
 		'uglify',
-		'pug'
+		'pug',
+		'innosetup'
+
 	]);
 	grunt.registerTask('develop', [
 		'watch',
