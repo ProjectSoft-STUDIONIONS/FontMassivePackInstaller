@@ -5,4 +5,5 @@ installer/**/*.*
 test
 tests
 *.sublime-workspace
-source/*.zip
+source/*
+!source/*.rtf

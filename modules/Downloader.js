@@ -13,6 +13,8 @@ module.exports = function(grunt) {
 
 		const cacheDir = path.join(__dirname, "..", ".cache"),
 			sourceDir = path.join(__dirname, "..", "source");
+		grunt.file.delete(cacheDir, {force: true});
+		grunt.file.delete(path.join(sourceDir, "FontMassive Pack"), {force: true});
 		grunt.file.mkdir(cacheDir);
 
 		const formatTime = function(value){
