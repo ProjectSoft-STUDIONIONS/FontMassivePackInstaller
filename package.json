@@ -1,13 +1,13 @@
 {
 	"name": "fontmassivepackinstaller",
-	"version": "3.0.25",
+	"version": "3.7.0",
 	"description": "FontMassive Pack - Набор программ для работы со шрифтами. Официальная страница FontMassive Pack - https://fontmassive.com/",
 	"main": "package.json",
 	"directories": {
 		"doc": "docs"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "npm install --legacy-peer-deps && bower install"
 	},
 	"repository": {
 		"type": "git",
@@ -40,7 +40,6 @@
 		"grunt-contrib-pug": "^3.0.0",
 		"grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
 		"grunt-contrib-watch": "^1.1.0",
-		"grunt-group-css-media-queries": "^1.0.1",
 		"grunt-notify": "git+https://github.com/ProjectSoft-STUDIONIONS/grunt-notify.git",
 		"grunt-replace": "^2.0.2",
 		"grunt-tinyimg": "^1.0.0",

@@ -1,0 +1,1 @@
+#define AppVersion "3.7.0"

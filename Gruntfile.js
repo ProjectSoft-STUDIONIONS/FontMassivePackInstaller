@@ -65,13 +65,6 @@ module.exports = function(grunt){
 				}
 			},
 		},
-		group_css_media_queries: {
-			group: {
-				files: {
-					'tests/css/media.main.css': ['tests/css/main.css'],
-				}
-			}
-		},
 		cssmin: {
 			options: {
 				mergeIntoShorthands: false,
@@ -80,7 +73,7 @@ module.exports = function(grunt){
 			minify: {
 				files: {
 					'docs/assets/css/main.css' : [
-						'tests/css/media.main.css'
+						'tests/css/main.css'
 					],
 				}
 			}
@@ -132,7 +125,6 @@ module.exports = function(grunt){
 					'tinyimg',
 					'less',
 					'autoprefixer',
-					'group_css_media_queries',
 					'cssmin',
 					'uglify',
 					'pug',
@@ -145,7 +137,6 @@ module.exports = function(grunt){
 		'tinyimg',
 		'less',
 		'autoprefixer',
-		'group_css_media_queries',
 		'cssmin',
 		'uglify',
 		'pug'
