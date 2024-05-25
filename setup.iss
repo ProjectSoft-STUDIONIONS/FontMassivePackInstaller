@@ -1,8 +1,8 @@
 #include "version.iss"
 #define AppName "FontMassive Pack"
 #define GitReleace "https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/releases"
-#define AppCopyright "Copyright © 2014 Алексей Коноплев aka KLesha28"
-#define AppPublisher "Алексей Коноплев (KLesha28)"
+#define AppCopyright "Copyright � 2014 Alexey Konoplev aka KLesha28"
+#define AppPublisher "Alexey Konoplev (KLesha28)"
 #define AppUrl "https://fontmassive.com/"
 #define AppEmail "support@fontmassive.com"
 #define InstallBuilder "ProjectSoft"
@@ -19,13 +19,13 @@ AppPublisher={#AppPublisher}
 AppPublisherURL={#AppUrl}
 AppSupportURL={#AppUrl}
 AppContact={#AppEmail}
-AppComments=Сборка инсталяции для программы {#AppName}
+AppComments=Building an installation for the program {#AppName}
 AppReadmeFile={app}\FM3_Data\Readme_ru.txt
 InfoBeforeFile=source\History.rtf
 
 VersionInfoVersion={#AppVersion}
 VersionInfoCompany={#AppName}
-VersionInfoDescription=Сборка инсталяции для программы {#AppName}
+VersionInfoDescription=Building an installation for the program {#AppName}
 VersionInfoTextVersion={#AppVersion}
 VersionInfoCopyright={#AppCopyright}
 PrivilegesRequired=lowest
@@ -43,7 +43,7 @@ WizardImageFile=embed/wizard.bmp
 WizardSmallImageFile=embed/logo.bmp
 
 SetupIconFile=embed/icon.ico
-UninstallDisplayName=Удалить {#AppName}
+UninstallDisplayName=������� {#AppName}
 
 WindowVisible=false
 DisableWelcomePage=False
@@ -114,12 +114,12 @@ Source: {#Source}\FQ_Data\*; DestDir: {app}\FQ_Data; Flags: ignoreversion recurs
 Source: {#Source}\FT_Data\*; DestDir: {app}\FT_Data; Flags: ignoreversion recursesubdirs createallsubdirs 
 
 [Icons]
-Name: {userprograms}\FontMassive Pack\Менеджер шрифтов; Filename: {app}\FontMassive.exe
-Name: {userprograms}\FontMassive Pack\Временная установка шрифтов; Filename: {app}\FonTemp.exe
-Name: {userprograms}\FontMassive Pack\Распознавание шрифтов на изображении; Filename: {app}\FontDetect.exe
-Name: {userprograms}\FontMassive Pack\Выпрямление текста по окружности; Filename: {app}\Circular.exe
-Name: {userprograms}\FontMassive Pack\Выпрямление текста по кривой; Filename: {app}\LinearText.exe
-Name: {userprograms}\FontMassive Pack\Быстрый просмотр шрифта; Filename: {app}\FontQuickView.exe
+Name: {userprograms}\FontMassive Pack\Font Manager; Filename: {app}\FontMassive.exe
+Name: {userprograms}\FontMassive Pack\Temporary installation of fonts; Filename: {app}\FonTemp.exe
+Name: {userprograms}\FontMassive Pack\Image font recognition; Filename: {app}\FontDetect.exe
+Name: {userprograms}\FontMassive Pack\Straighten text around a circle; Filename: {app}\Circular.exe
+Name: {userprograms}\FontMassive Pack\Straighten text along a curve; Filename: {app}\LinearText.exe
+Name: {userprograms}\FontMassive Pack\Font Quick View; Filename: {app}\FontQuickView.exe
 Name: {group}\{cm:UninstallProgram, FontMassive Pack}; Filename: {uninstallexe}
 
 [UninstallDelete]                     
@@ -131,7 +131,7 @@ Type: filesandordirs; Name: {app}\LT_Data
 Type: filesandordirs; Name: {app}
 
 [Run]
-Filename: {app}\FonTemp.EXE; Description: Запустить Менеджер коллекций шрифтов; Flags: postinstall nowait skipifsilent unchecked
-Filename: {app}\FontMassive.EXE; Description: Запустить FontMassive; Flags: postinstall nowait skipifsilent runminimized unchecked
-Filename: {app}\FM3_Data\Readme_ru.txt; Description: Просмотреть файл README; Flags: postinstall shellexec skipifsilent unchecked
-Filename: {app}\History.rtf; Description: Просмотреть Историю изменений; Flags: postinstall shellexec skipifsilent unchecked
+Filename: {app}\FonTemp.EXE; Description: Launch Font Collection Manager; Flags: postinstall nowait skipifsilent unchecked
+Filename: {app}\FontMassive.EXE; Description: Launch FontMassive; Flags: postinstall nowait skipifsilent runminimized unchecked
+Filename: {app}\FM3_Data\Readme_ru.txt; Description: View README file; Flags: postinstall shellexec skipifsilent unchecked
+Filename: {app}\History.rtf; Description: View Change History; Flags: postinstall shellexec skipifsilent unchecked
