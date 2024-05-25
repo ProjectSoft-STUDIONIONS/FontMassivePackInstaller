@@ -30,7 +30,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Build
         run: npm run test
-          [Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding("windows-1251")
           npm run build
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
