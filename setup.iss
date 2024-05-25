@@ -1,8 +1,8 @@
-#include "version.iss"
+﻿#include "version.iss"
 #define AppName "FontMassive Pack"
 #define GitReleace "https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/releases"
-#define AppCopyright "Copyright � 2014 Alexey Konoplev aka KLesha28"
-#define AppPublisher "Alexey Konoplev (KLesha28)"
+#define AppCopyright "Copyright © 2014 Алексей Коноплёв aka KLesha28"
+#define AppPublisher "Алексей Коноплёв (KLesha28)"
 #define AppUrl "https://fontmassive.com/"
 #define AppEmail "support@fontmassive.com"
 #define InstallBuilder "ProjectSoft"
@@ -19,13 +19,13 @@ AppPublisher={#AppPublisher}
 AppPublisherURL={#AppUrl}
 AppSupportURL={#AppUrl}
 AppContact={#AppEmail}
-AppComments=Building an installation for the program {#AppName}
+AppComments=Сборка установки программы {#AppName}
 AppReadmeFile={app}\FM3_Data\Readme_ru.txt
 InfoBeforeFile=source\History.rtf
 
 VersionInfoVersion={#AppVersion}
 VersionInfoCompany={#AppName}
-VersionInfoDescription=Building an installation for the program {#AppName}
+VersionInfoDescription=Сборка установки программы {#AppName}
 VersionInfoTextVersion={#AppVersion}
 VersionInfoCopyright={#AppCopyright}
 PrivilegesRequired=lowest
@@ -43,7 +43,7 @@ WizardImageFile=embed/wizard.bmp
 WizardSmallImageFile=embed/logo.bmp
 
 SetupIconFile=embed/icon.ico
-UninstallDisplayName=������� {#AppName}
+UninstallDisplayName=Uninstal {#AppName}
 
 WindowVisible=false
 DisableWelcomePage=False
@@ -66,12 +66,36 @@ InternalCompressLevel=ultra
 DisableProgramGroupPage=yes
 AppUpdatesURL={#GitReleace}
 DisableDirPage=yes
-ShowLanguageDialog=no
+ShowLanguageDialog=yes
+LanguageDetectionMethod=locale
 
 ArchitecturesInstallIn64BitMode=x64
 
 [Languages]
+Name: "ru"; MessagesFile: "compiler:Languages/Russian.isl" 
 Name: "en"; MessagesFile: "compiler:Default.isl"
+
+[CustomMessages]
+en.FontMassive=Font Manager
+ru.FontMassive=Менеджер шрифтов
+en.FonTemp=Temporary installation of fonts
+ru.FonTemp=Временная установка шрифтов
+en.FontDetect=Recognizing fonts in an image
+ru.FontDetect=Распознавание шрифтов на изображении
+en.FontQuickView=Quick font preview
+ru.FontQuickView=Быстрый просмотр шрифта
+en.Circular=Straightening text around a circle
+ru.Circular=Выпрямление текста по окружности
+en.LinearText=Straightening text along a curve
+ru.LinearText=Выпрямление текста по кривой
+en.FonTempRun=Launch Font Manager
+ru.FonTempRun=Запустить Временную установку шрифтов
+en.FontMassiveRun=Launch Font Manager
+ru.FontMassiveRun=Запустить Менеджер шрифтов
+en.ReadmeRun=View README file
+ru.ReadmeRun=Посмотреть файл README
+en.HistoryRun=View Change History
+ru.HistoryRun=Просмотреть историю изменений
 
 [Dirs]
 Name: {app}\FM3_Data
@@ -109,12 +133,12 @@ Source: {#Source}\FQ_Data\*; DestDir: {app}\FQ_Data; Flags: ignoreversion recurs
 Source: {#Source}\FT_Data\*; DestDir: {app}\FT_Data; Flags: ignoreversion recursesubdirs createallsubdirs 
 
 [Icons]
-Name: {userprograms}\FontMassive Pack\Font Manager; Filename: {app}\FontMassive.exe
-Name: {userprograms}\FontMassive Pack\Temporary installation of fonts; Filename: {app}\FonTemp.exe
-Name: {userprograms}\FontMassive Pack\Image font recognition; Filename: {app}\FontDetect.exe
-Name: {userprograms}\FontMassive Pack\Straighten text around a circle; Filename: {app}\Circular.exe
-Name: {userprograms}\FontMassive Pack\Straighten text along a curve; Filename: {app}\LinearText.exe
-Name: {userprograms}\FontMassive Pack\Font Quick View; Filename: {app}\FontQuickView.exe
+Name: {userprograms}\FontMassive Pack\{cm:FontMassive, FontMassive}; Filename: {app}\FontMassive.exe
+Name: {userprograms}\FontMassive Pack\{cm:FonTemp, FonTemp}; Filename: {app}\FonTemp.exe
+Name: {userprograms}\FontMassive Pack\{cm:FontDetect, FontDetect}; Filename: {app}\FontDetect.exe  
+Name: {userprograms}\FontMassive Pack\{cm:FontQuickView, FontQuickView}; Filename: {app}\FontQuickView.exe
+Name: {userprograms}\FontMassive Pack\{cm:Circular, Circular}; Filename: {app}\Circular.exe
+Name: {userprograms}\FontMassive Pack\{cm:LinearText, LinearText}; Filename: {app}\LinearText.exe
 Name: {group}\{cm:UninstallProgram, FontMassive Pack}; Filename: {uninstallexe}
 
 [UninstallDelete]                     
@@ -126,7 +150,7 @@ Type: filesandordirs; Name: {app}\LT_Data
 Type: filesandordirs; Name: {app}
 
 [Run]
-Filename: {app}\FonTemp.EXE; Description: Launch Font Collection Manager; Flags: postinstall nowait skipifsilent unchecked
-Filename: {app}\FontMassive.EXE; Description: Launch FontMassive; Flags: postinstall nowait skipifsilent runminimized unchecked
-Filename: {app}\FM3_Data\Readme_ru.txt; Description: View README file; Flags: postinstall shellexec skipifsilent unchecked
-Filename: {app}\History.rtf; Description: View Change History; Flags: postinstall shellexec skipifsilent unchecked
+Filename: {app}\FonTemp.EXE; Description: {cm:FonTempRun, Font Temp Run}; Flags: postinstall nowait skipifsilent unchecked
+Filename: {app}\FontMassive.EXE; Description: {cm:FonTempRun, Font Massive Run}; Flags: postinstall nowait skipifsilent runminimized unchecked
+Filename: {app}\FM3_Data\Readme_ru.txt; Description: {cm:ReadmeRun, Readme Run}; Flags: postinstall shellexec skipifsilent unchecked
+Filename: {app}\History.rtf; Description: {cm:HistoryRun, History Run}; Flags: postinstall shellexec skipifsilent unchecked

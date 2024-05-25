@@ -22,28 +22,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir installer
       - name: Set output
-        id: vars
-        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
-      - name: Check output
-        env:
-          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-        run: |
-          echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
-          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
-          echo "Tag name from github.event.release.tag_name: ${{  github.event.release.tag_name }}"
-          echo $RELEASE_VERSION
+      - run: mkdir installer
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Build
-        run: |
-          npm run test
-          npm run build
-      - name: Upload binaries to release
+      - name: Install NPM packages...
+        run: npm run test
+      - name: Build FontMassive Pack Installer
+        run: npm run build
+      - name: Upload FontMassive Pack Installer to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
