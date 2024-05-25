@@ -1,17 +1,10 @@
-name: Build and publish
-
+name: Build and publish release
 on:
   push:
     tags:
       - "*"
   release:
     types: [ created ]
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version number to build'
-        required: true
-        default: '0.0.0'
 jobs:
   build:
     name: Build
@@ -19,7 +12,6 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-
     steps:
       - uses: actions/checkout@v4
       - name: Set output
@@ -31,7 +23,7 @@ jobs:
       - name: Install NPM packages...
         run: npm run test
       - name: Build FontMassive Pack Installer
-        run: npm run build
+        run: [Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding("windows-1251") && npm run build
       - name: Upload FontMassive Pack Installer to release
         uses: svenstaro/upload-release-action@v2
         with:
