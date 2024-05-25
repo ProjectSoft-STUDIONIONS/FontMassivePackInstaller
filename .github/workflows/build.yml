@@ -28,9 +28,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Build
-        run: npm run test
-          npm run build
+        run: npm run test && npm run build
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
