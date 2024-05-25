@@ -28,7 +28,7 @@ jobs:
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
-        repo_token: ${{ secrets.TOKEN }}
-        file: installer/FontMassivePack.exe
-        asset_name: FontMassivePack.exe
-        tag: ${{ github.ref }}
+          repo_token: ${{ secrets.TOKEN_A }}
+          file: installer/FontMassivePack.exe
+          asset_name: FontMassivePack.exe
+          tag: ${{ github.ref }}
