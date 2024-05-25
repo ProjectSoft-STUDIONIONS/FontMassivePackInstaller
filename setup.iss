@@ -1,8 +1,8 @@
 #include "version.iss"
 #define AppName "FontMassive Pack"
 #define GitReleace "https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/releases"
-#define AppCopyright "Copyright © 2014 Алексей Коноплев aka KLesha28"
-#define AppPublisher "Алексей Коноплев (KLesha28)"
+#define AppCopyright "Copyright В© 2014 РђР»РµРєСЃРµР№ РљРѕРЅРѕРїР»РµРІ aka KLesha28"
+#define AppPublisher "РђР»РµРєСЃРµР№ РљРѕРЅРѕРїР»РµРІ (KLesha28)"
 #define AppUrl "https://fontmassive.com/"
 #define AppEmail "support@fontmassive.com"
 #define InstallBuilder "ProjectSoft"
@@ -19,13 +19,13 @@ AppPublisher={#AppPublisher}
 AppPublisherURL={#AppUrl}
 AppSupportURL={#AppUrl}
 AppContact={#AppEmail}
-AppComments=Сборка инсталяции для программы {#AppName}
+AppComments=РЎР±РѕСЂРєР° РёРЅСЃС‚Р°Р»СЏС†РёРё РґР»СЏ РїСЂРѕРіСЂР°РјРјС‹ {#AppName}
 AppReadmeFile={app}\FM3_Data\Readme_ru.txt
 InfoBeforeFile=source\History.rtf
 
 VersionInfoVersion={#AppVersion}
 VersionInfoCompany={#AppName}
-VersionInfoDescription=Сборка инсталяции для программы {#AppName}
+VersionInfoDescription=РЎР±РѕСЂРєР° РёРЅСЃС‚Р°Р»СЏС†РёРё РґР»СЏ РїСЂРѕРіСЂР°РјРјС‹ {#AppName}
 VersionInfoTextVersion={#AppVersion}
 VersionInfoCopyright={#AppCopyright}
 PrivilegesRequired=lowest
@@ -43,7 +43,7 @@ WizardImageFile=embed/wizard.bmp
 WizardSmallImageFile=embed/logo.bmp
 
 SetupIconFile=embed/icon.ico
-UninstallDisplayName=Удалить {#AppName}
+UninstallDisplayName=РЈРґР°Р»РёС‚СЊ {#AppName}
 
 WindowVisible=false
 DisableWelcomePage=False
@@ -114,12 +114,12 @@ Source: {#Source}\FQ_Data\*; DestDir: {app}\FQ_Data; Flags: ignoreversion recurs
 Source: {#Source}\FT_Data\*; DestDir: {app}\FT_Data; Flags: ignoreversion recursesubdirs createallsubdirs 
 
 [Icons]
-Name: {userprograms}\FontMassive Pack\Менеджер шрифтов; Filename: {app}\FontMassive.exe
-Name: {userprograms}\FontMassive Pack\Временная установка шрифтов; Filename: {app}\FonTemp.exe
-Name: {userprograms}\FontMassive Pack\Распознавание шрифтов на изображении; Filename: {app}\FontDetect.exe
-Name: {userprograms}\FontMassive Pack\Выпрямление текста по окружности; Filename: {app}\Circular.exe
-Name: {userprograms}\FontMassive Pack\Выпрямление текста по кривой; Filename: {app}\LinearText.exe
-Name: {userprograms}\FontMassive Pack\Быстрый просмотр шрифта; Filename: {app}\FontQuickView.exe
+Name: {userprograms}\FontMassive Pack\РњРµРЅРµРґР¶РµСЂ С€СЂРёС„С‚РѕРІ; Filename: {app}\FontMassive.exe
+Name: {userprograms}\FontMassive Pack\Р’СЂРµРјРµРЅРЅР°СЏ СѓСЃС‚Р°РЅРѕРІРєР° С€СЂРёС„С‚РѕРІ; Filename: {app}\FonTemp.exe
+Name: {userprograms}\FontMassive Pack\Р Р°СЃРїРѕР·РЅР°РІР°РЅРёРµ С€СЂРёС„С‚РѕРІ РЅР° РёР·РѕР±СЂР°Р¶РµРЅРёРё; Filename: {app}\FontDetect.exe
+Name: {userprograms}\FontMassive Pack\Р’С‹РїСЂСЏРјР»РµРЅРёРµ С‚РµРєСЃС‚Р° РїРѕ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё; Filename: {app}\Circular.exe
+Name: {userprograms}\FontMassive Pack\Р’С‹РїСЂСЏРјР»РµРЅРёРµ С‚РµРєСЃС‚Р° РїРѕ РєСЂРёРІРѕР№; Filename: {app}\LinearText.exe
+Name: {userprograms}\FontMassive Pack\Р‘С‹СЃС‚СЂС‹Р№ РїСЂРѕСЃРјРѕС‚СЂ С€СЂРёС„С‚Р°; Filename: {app}\FontQuickView.exe
 Name: {group}\{cm:UninstallProgram, FontMassive Pack}; Filename: {uninstallexe}
 
 [UninstallDelete]                     
@@ -131,7 +131,7 @@ Type: filesandordirs; Name: {app}\LT_Data
 Type: filesandordirs; Name: {app}
 
 [Run]
-Filename: {app}\FonTemp.EXE; Description: Запустить Менеджер коллекций шрифтов; Flags: postinstall nowait skipifsilent unchecked
-Filename: {app}\FontMassive.EXE; Description: Запустить FontMassive; Flags: postinstall nowait skipifsilent runminimized unchecked
-Filename: {app}\FM3_Data\Readme_ru.txt; Description: Просмотреть файл README; Flags: postinstall shellexec skipifsilent unchecked
-Filename: {app}\History.rtf; Description: Просмотреть Историю изменений; Flags: postinstall shellexec skipifsilent unchecked
+Filename: {app}\FonTemp.EXE; Description: Р—Р°РїСѓСЃС‚РёС‚СЊ РњРµРЅРµРґР¶РµСЂ РєРѕР»Р»РµРєС†РёР№ С€СЂРёС„С‚РѕРІ; Flags: postinstall nowait skipifsilent unchecked
+Filename: {app}\FontMassive.EXE; Description: Р—Р°РїСѓСЃС‚РёС‚СЊ FontMassive; Flags: postinstall nowait skipifsilent runminimized unchecked
+Filename: {app}\FM3_Data\Readme_ru.txt; Description: РџСЂРѕСЃРјРѕС‚СЂРµС‚СЊ С„Р°Р№Р» README; Flags: postinstall shellexec skipifsilent unchecked
+Filename: {app}\History.rtf; Description: РџСЂРѕСЃРјРѕС‚СЂРµС‚СЊ РСЃС‚РѕСЂРёСЋ РёР·РјРµРЅРµРЅРёР№; Flags: postinstall shellexec skipifsilent unchecked
