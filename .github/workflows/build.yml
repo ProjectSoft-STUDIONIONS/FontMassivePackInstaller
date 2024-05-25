@@ -34,7 +34,6 @@ jobs:
           echo "Tag name from github.ref_name: ${{  github.ref_name }}"
           echo "Tag name from github.event.release.tag_name: ${{  github.event.release.tag_name }}"
           echo $RELEASE_VERSION
-          echo ${{ steps.vars.outputs.tag }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
