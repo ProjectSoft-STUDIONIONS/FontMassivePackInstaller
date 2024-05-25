@@ -20,10 +20,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install NPM packages...
+      - name: Install NPM packages
         run: npm run test
       - name: Build FontMassive Pack Installer
-        run: [Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding("windows-1251") && npm run build
+        run: "[Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding('windows-1251') && npm run build"
       - name: Upload FontMassive Pack Installer to release
         uses: svenstaro/upload-release-action@v2
         with:
