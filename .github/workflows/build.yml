@@ -1,10 +1,17 @@
 name: Build and publish
 
 on:
-    push:
-        tags:
-            - "*"
-
+  push:
+    tags:
+      - "*"
+  release:
+    types: [ created ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number to build'
+        required: true
+        default: '0.0.0'
 jobs:
   build:
     name: Build
@@ -30,5 +37,6 @@ jobs:
         with:
           repo_token: ${{ secrets.TOKEN_A }}
           file: installer/FontMassivePack.exe
-          asset_name: FontMassivePack.exe
-          tag: ${{ github.ref }}
+          tag: 3.7.0-3
+          overwrite: true
+          file_glob: true
