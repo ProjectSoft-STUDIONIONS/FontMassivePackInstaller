@@ -5,5 +5,20 @@
 			"name": "FontMassive Pack Installer",
 			"path": "."
 		}
+	],
+    "settings":
+	{
+		"tab_size": 4,
+		"font_size": 12,
+		"font_face": "JetBrains Mono"
+	},
+	"build_systems":
+	[
+		{
+			"name": "Запуск проекта",
+			"working_dir": "${project_path}",
+			"cmd": ["grunt"],
+			"shell": true
+		}
 	]
 }

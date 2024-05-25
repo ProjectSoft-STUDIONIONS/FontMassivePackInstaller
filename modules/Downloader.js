@@ -1,12 +1,13 @@
 module.exports = function(grunt) {
 	//process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+	const supportsColor = require("supports-color");
 	const fs = require("fs");
 	const path = require("path");
 	const { DownloaderHelper } = require('node-downloader-helper');
 	const cliProgress = require('cli-progress');
 	const _colors = require('ansi-colors');
 	const zl = require("zip-lib");
-
+	const colorEnb = typeof supportsColor.stdout == 'object' ? true : false;
 	grunt.registerMultiTask('downloader', 'Downloads FontMassive Pack', async function() {
 		var done = this.async();
 		const pkg = this.options().pkg;
@@ -17,14 +18,11 @@ module.exports = function(grunt) {
 		grunt.file.delete(path.join(sourceDir, "FontMassive Pack"), {force: true});
 		grunt.file.mkdir(cacheDir);
 
-		const formatTime = function(value){
-				// leading zero padding
-				function autopadding(v){
-					return ("0" + v).slice(-2);
-				}
-				return autopadding(Math.round((value / 360) % 24)) + 
-				 ":" + autopadding(Math.round((value / 60) % 60)) + 
-				 ":" + autopadding(Math.round(value % 60))
+		const formatTime = function(value, len = 2){
+
+				return String(Math.round((value / 360) % 24)).padStart(2, "0") + 
+				 ":" + String(Math.round((value / 60) % 60)).padStart(2, "0") + 
+				 ":" + String(Math.ceil(value % 60)).padStart(2, "0");
 			},
 			autopaddingVal = function (value, length, opt){
 				return (opt.autopaddingChar + value).slice(-length);
@@ -47,13 +45,9 @@ module.exports = function(grunt) {
 						optionsBar.barGlue +
 						optionsBar.barIncompleteString.substr(0, incompleteSize);
 				const percentage =  Math.floor(paramsBar.progress * 100) + '';
-				const formatValue = formatBytes(paramsBar.value);
-				const formatTotal = formatBytes(paramsBar.total);
-				const total = formatTotal.length;// params
 				const stopTime = paramsBar.stopTime || Date.now();
 				const elapsedTime = formatTime(Math.round((stopTime - paramsBar.startTime)/1000));
-				
-				var barStr = _colors.white('|') + _colors.cyan(bar + ' ' + autopadding(percentage, 3) + '%') + "  " + _colors.white('|') + "  " + elapsedTime;
+				const barStr = colorEnb ? _colors.white('|') + _colors.cyan(bar) + _colors.white('|')  + ' ' + _colors.yellowBright(autopadding(percentage, 3) + '%') + _colors.white(" | " + elapsedTime + "." + String((stopTime - paramsBar.startTime) % 1000).padStart(3, "0")) : '|' + bar  + '| ' + autopadding(percentage, 3) + "% | " + elapsedTime + "." + String((stopTime - paramsBar.startTime) % 1000).padStart(3, "0");
 				return barStr;
 			},
 			rightpad = function(str, len, ch = false) {
@@ -119,41 +113,48 @@ module.exports = function(grunt) {
 				progress.start(100, 0);
 			});
 		}
+		function log(inputName) {
+			grunt.log.writeln(" ");
+			let simbol = '√';
+			let dw = 'Download →';
+			let out = colorEnb ? `${dw} ${_colors.yellowBright(simbol)} ${inputName}` : `${dw} ${simbol} ${inputName}`
+			grunt.log.oklns([`${out}`]);
+		}
 		// FontMassive
 		// https://fontmassive.com/download.php?prog=FontMassive
 		// https://fontmassive.com/download.php?prog=FontMassive64
-		grunt.log.oklns([`${rightpad('Download ', 12, ' ')} -> FontMassive`]);
+		log(`FontMassive`);
 		FontMassive(`https://fontmassive.com/download.php?prog=FontMassive`, `FontMassive.zip`).then(function(){
-			grunt.log.oklns([`${rightpad('Download ', 12, ' ')} -> FontMassive64`]);
+			log(`FontMassive64`);
 			FontMassive(`https://fontmassive.com/download.php?prog=FontMassive64`, `FontMassive64.zip`).then(function(){
 				// FonTemp
 				// https://fontmassive.com/download.php?prog=FonTemp
 				// https://fontmassive.com/download.php?prog=FonTemp64
-				grunt.log.oklns([`${rightpad('Download ', 12, ' ')} -> FonTemp`]);
+				log(`FonTemp`);
 				FontMassive(`https://fontmassive.com/download.php?prog=FonTemp`, `FonTemp.zip`).then(function(){
-					grunt.log.oklns([`${rightpad('Download ', 12, ' ')} -> FonTemp64`]);
+					log(`FonTemp64`);
 					FontMassive(`https://fontmassive.com/download.php?prog=FonTemp64`, `FonTemp64.zip`).then(function(){
 						// FontDetect
 						// https://fontmassive.com/download.php?prog=FontDetect
 						// https://fontmassive.com/download.php?prog=FontDetect64
-						grunt.log.oklns([`${rightpad('Download ', 12, ' ')} -> FontDetect`]);
+						log(`FontDetect`);
 						FontMassive(`https://fontmassive.com/download.php?prog=FontDetect`, `FontDetect.zip`).then(function(){
-							grunt.log.oklns([`${rightpad('Download ', 12, ' ')} -> FontDetect64`]);
+							log(`FontDetect64`);
 							FontMassive(`https://fontmassive.com/download.php?prog=FontDetect64`, `FontDetect64.zip`).then(function(){
 								// FontQuickView
 								// https://fontmassive.com/download.php?prog=FontQuickView
 								// https://fontmassive.com/download.php?prog=FontQuickView64
-								grunt.log.oklns([`${rightpad('Download ', 12, ' ')} -> FontQuickView`]);
+								log(`FontQuickView`);
 								FontMassive(`https://fontmassive.com/download.php?prog=FontQuickView`, `FontQuickView.zip`).then(function(){
-									grunt.log.oklns([`${rightpad('Download ', 12, ' ')} -> FontQuickView64`]);
+									log(`FontQuickView64`);
 									FontMassive(`https://fontmassive.com/download.php?prog=FontQuickView64`, `FontQuickView64.zip`).then(function(){
 										// LinearText
 										// https://fontmassive.com/download.php?prog=LinearText
-										grunt.log.oklns([`${rightpad('Download ', 12, ' ')} -> LinearText`]);
+										log(`LinearText`);
 										FontMassive(`https://fontmassive.com/download.php?prog=LinearText`, `LinearText.zip`).then(function(){
 											// LinearText
 											// https://fontmassive.com/download.php?prog=Circular
-											grunt.log.oklns([`${rightpad('Download ', 12, ' ')} -> Circular`]);
+											log(`Circular`);
 											FontMassive(`https://fontmassive.com/download.php?prog=Circular`, `Circular.zip`).then(function(){
 												done();
 											}).catch(function(e){

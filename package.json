@@ -7,7 +7,8 @@
 		"doc": "docs"
 	},
 	"scripts": {
-		"test": "npm install --legacy-peer-deps && bower install"
+		"test": "npm install --legacy-peer-deps && bower install",
+		"build": "grunt -v"
 	},
 	"repository": {
 		"type": "git",
@@ -28,31 +29,32 @@
 	},
 	"homepage": "https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller#readme",
 	"devDependencies": {
-		"grunt": "^1.0.3",
-		"grunt-autoprefixer": "^3.0.4",
-		"grunt-bower-server": "0.0.0",
-		"grunt-concurrent": "^2.3.1",
-		"grunt-contrib-clean": "^2.0.0",
-		"grunt-contrib-concat": "^1.0.1",
-		"grunt-contrib-copy": "^1.0.0",
-		"grunt-contrib-cssmin": "^3.0.0",
-		"grunt-contrib-imagemin": "^3.1.0",
-		"grunt-contrib-less": "^2.0.0",
-		"grunt-contrib-pug": "^3.0.0",
+		"grunt": "latest",
+		"grunt-autoprefixer": "latest",
+		"grunt-bower-server": "latest",
+		"grunt-concurrent": "latest",
+		"grunt-contrib-clean": "latest",
+		"grunt-contrib-concat": "latest",
+		"grunt-contrib-copy": "latest",
+		"grunt-contrib-cssmin": "latest",
+		"grunt-contrib-imagemin": "latest",
+		"grunt-contrib-less": "latest",
+		"grunt-contrib-pug": "latest",
 		"grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
-		"grunt-contrib-watch": "^1.1.0",
-		"grunt-replace": "^2.0.2",
-		"grunt-tinyimg": "^1.0.0",
+		"grunt-contrib-watch": "latest",
+		"grunt-replace": "latest",
+		"grunt-tinyimg": "latest",
 		"innosetup-compiler": "github:ProjectSoft-STUDIONIONS/node-innosetup-compiler",
-		"load-grunt-tasks": "^4.0.0",
-		"time-grunt": "^2.0.0"
+		"load-grunt-tasks": "latest",
+		"time-grunt": "latest"
 	},
 	"dependencies": {
-		"node-downloader-helper": "^2.1.9",
-		"ansi-colors": "^4.1.3",
-		"cli-progress": "^3.12.0",
+		"ansi-colors": "latest",
+		"cli-progress": "latest",
 		"dotenv": "latest",
-		"zip-lib": "latest",
-		"uglify-es": "github:mishoo/UglifyJS2#harmony"
+		"node-downloader-helper": "latest",
+		"supports-color": "8.1.1",
+		"uglify-es": "github:mishoo/UglifyJS2#harmony",
+		"zip-lib": "latest"
 	}
 }
