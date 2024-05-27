@@ -6,12 +6,6 @@ on:
       - "*"
   release:
     types: [ created ]
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version number to build'
-        required: true
-        default: '0.0.0'
 jobs:
   build:
     name: Build
