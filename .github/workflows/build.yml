@@ -16,10 +16,6 @@ jobs:
   build:
     name: Build
     runs-on: windows-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
       - uses: actions/checkout@v4
       - run: mkdir installer
