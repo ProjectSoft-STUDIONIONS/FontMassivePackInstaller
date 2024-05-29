@@ -1,10 +1,12 @@
 /node_modules
 /bower_components
 /.cache
-/installer/**/*.*
 /test
 /tests
 /lib
-*.sublime-workspace
+/installer/**/*.*
 /source/*
+/desktop.*
+*.sublime-workspace
+
 /!source/*.rtf
