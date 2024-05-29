@@ -6,7 +6,7 @@
 /lib
 /installer/**/*.*
 /source/*
-
+/desktop.*
 *.sublime-workspace
 
 /!source/*.rtf
