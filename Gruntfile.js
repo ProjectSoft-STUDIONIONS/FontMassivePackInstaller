@@ -9,7 +9,31 @@ module.exports = function(grunt){
 
 	var gc = {},
 		pkg = grunt.file.readJSON('package.json');
-
+	function getTasks() {
+		switch(process.env.GRUNT_TASK){
+			case "develop":
+				return [
+					'watch'
+				];
+			case "server":
+				return [
+					'bower_server'
+				];
+			default:
+				return [
+					'version_edit',
+					'downloader',
+					'imagemin',
+					'tinyimg',
+					'less',
+					'autoprefixer',
+					'cssmin',
+					'uglify',
+					'pug',
+					'innosetup'
+				];
+		}
+	}
 	grunt.initConfig({
 		globalConfig : gc,
 		pkg : pkg,
@@ -141,7 +165,8 @@ module.exports = function(grunt){
 					//api: './mock',
 					port: 3003,
 					base: 'docs/',
-					release: false
+					release: true,
+					config: true
 				}
 			}
 		},
@@ -165,23 +190,5 @@ module.exports = function(grunt){
 			}
 		},
 	});
-	grunt.registerTask('default', [
-		'version_edit',
-		'downloader',
-		'imagemin',
-		'tinyimg',
-		'less',
-		'autoprefixer',
-		'cssmin',
-		'uglify',
-		'pug',
-		'innosetup'
-
-	]);
-	grunt.registerTask('develop', [
-		'watch',
-	]);
-	grunt.registerTask('server', [
-		'bower_server',
-	]);
+	grunt.registerTask('default', getTasks());
 }
