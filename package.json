@@ -7,7 +7,8 @@
 		"doc": "docs"
 	},
 	"scripts": {
-		"inst": "npm install --legacy-peer-deps && bower install",
+		"preinstall": "npm i -g less pug-cli bower && bower install",
+		"inst": "npm install --legacy-peer-deps",
 		"build": "grunt -v",
 		"page": "grunt --gruntfile page.js -v"
 	},
