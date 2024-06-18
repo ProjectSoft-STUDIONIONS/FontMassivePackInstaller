@@ -146,12 +146,12 @@ module.exports = function(grunt){
 							"logotype": "projectsoft.png",
 							"copyright": "2008 - all right reserved",
 							"open_graph": {
-								"image_16x9": "image16x9.jpg",
-								"image_16x9_width": "1920",
-								"image_16x9_height": "1080",
-								"image_1x1": "image1x1.jpg",
-								"image_1x1_width": "1080",
-								"image_1x1_height": "1080",
+								"image_16x9": "application.jpg",
+								"image_16x9_width": "499",
+								"image_16x9_height": "392",
+								"image_1x1": "application.jpg",
+								"image_1x1_width": "499",
+								"image_1x1_height": "392",
 							}
 						}
 					}
