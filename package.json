@@ -7,8 +7,9 @@
 		"doc": "docs"
 	},
 	"scripts": {
-		"test": "npm install --legacy-peer-deps && bower install",
-		"build": "grunt -v"
+		"inst": "npm install --legacy-peer-deps && bower install",
+		"build": "grunt -v",
+		"page": "grunt --gruntfile page.js -v"
 	},
 	"repository": {
 		"type": "git",
