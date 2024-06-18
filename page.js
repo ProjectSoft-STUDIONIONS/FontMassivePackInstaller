@@ -95,7 +95,7 @@ module.exports = function(grunt){
 			},
 			minify: {
 				files: {
-					'docs/assets/css/main.css' : [
+					'docs/css/main.css' : [
 						'tests/css/main.css'
 					],
 				}
