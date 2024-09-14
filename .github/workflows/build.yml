@@ -6,28 +6,37 @@ on:
       - "*"
   release:
     types: [ created ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number to build'
+        required: true
+        default: '0.0.0'
 jobs:
   build:
+    name: Build
     runs-on: windows-latest
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [18.x]
+
     steps:
-    - uses: actions/checkout@v4
-    - name: Using Node.js ${{ matrix.node-version }} Windows
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Build
-      run: |
-        npm run test
-        npm run build
-    - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: installer/FontMassivePack.exe
-        tag: ${{ github.ref_name }}
-        overwrite: true
-        file_glob: true
-          
+      - uses: actions/checkout@v4
+      - run: mkdir installer
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build
+        run: |
+          npm run test
+          npm run build
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: installer/FontMassivePack.exe
+          tag: ${{ github.ref_name }}
+          overwrite: true
+          file_glob: true
