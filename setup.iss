@@ -69,7 +69,7 @@ DisableDirPage=yes
 ShowLanguageDialog=yes
 LanguageDetectionMethod=locale
 
-ArchitecturesInstallIn64BitMode=x64
+ArchitecturesInstallIn64BitMode=x64compatible
 
 [Languages]
 Name: "ru"; MessagesFile: "compiler:Languages/Russian.isl" 

@@ -14,12 +14,10 @@ module.exports = function(grunt) {
 
 		const cacheDir = path.join(__dirname, "..", ".cache"),
 			sourceDir = path.join(__dirname, "..", "source");
-		grunt.file.delete(cacheDir, {force: true});
-		grunt.file.delete(path.join(sourceDir, "FontMassive Pack"), {force: true});
-		grunt.file.mkdir(cacheDir);
-
+		grunt.file.exists(cacheDir) && grunt.file.delete(cacheDir, {force: true});
+		grunt.file.exists(path.join(sourceDir, "FontMassive Pack"))	&& grunt.file.delete(path.join(sourceDir, "FontMassive Pack"), {force: true});
+		!grunt.file.exists(cacheDir) && grunt.file.mkdir(cacheDir);
 		const formatTime = function(value, len = 2){
-
 				return String(Math.round((value / 360) % 24)).padStart(2, "0") + 
 				 ":" + String(Math.round((value / 60) % 60)).padStart(2, "0") + 
 				 ":" + String(Math.ceil(value % 60)).padStart(2, "0");

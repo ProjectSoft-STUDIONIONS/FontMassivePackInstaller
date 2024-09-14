@@ -8,5 +8,5 @@
 /source/*
 /desktop.*
 *.sublime-workspace
-
 /!source/*.rtf
+package-lock.json

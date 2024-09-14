@@ -46,7 +46,7 @@
 		"grunt-contrib-watch": "latest",
 		"grunt-replace": "latest",
 		"grunt-tinyimg": "latest",
-		"innosetup-compiler": "github:ProjectSoft-STUDIONIONS/node-innosetup-compiler",
+		"innosetup-compiler": "latest",
 		"load-grunt-tasks": "latest",
 		"time-grunt": "latest"
 	},
