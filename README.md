@@ -4,7 +4,7 @@
 
 Скачать: [![FontMassivePack.exe](https://img.shields.io/github/downloads/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/total.svg?label=%D0%A1%D0%9A%D0%90%D0%A7%D0%95%D0%9D%D0%9E&style=for-the-badge "FontMassivePack.exe")](https://github.com/ProjectSoft-STUDIONIONS/FontMassivePackInstaller/releases/latest/download/FontMassivePack.exe) 
 
-![FontMassive Pack Installer](docs/assets/images/application.png)
+![FontMassive Pack Installer](docs/images/mokup.png)
 
 **FontMassive Pack** - Набор программ для работы со шрифтами.   
 Официальная страница FontMassive Pack - [https://fontmassive.com/](https://fontmassive.com/)
