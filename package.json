@@ -1,6 +1,6 @@
 {
 	"name": "fontmassivepackinstaller",
-	"version": "3.7.0",
+	"version": "3.8.1",
 	"description": "FontMassive Pack - Набор программ для работы со шрифтами. Официальная страница FontMassive Pack - https://fontmassive.com/",
 	"main": "package.json",
 	"directories": {
@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"preinstall": "npm i -g less pug-cli bower && bower install",
-		"inst": "npm install --legacy-peer-deps",
+		"inst": "npm i",
 		"build": "grunt -v",
 		"page": "grunt --gruntfile page.js -v"
 	},
