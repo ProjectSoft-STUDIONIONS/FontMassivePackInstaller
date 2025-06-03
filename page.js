@@ -115,7 +115,7 @@ module.exports = function(grunt){
 							"page": "FontMassivePackInstaller",
 							"download": "FontMassivePack.exe",
 							"title": "FontMassive Pack Installer | ProjectSoft GitHub Pages",
-							"h1title": "FontMassive Pack Installer",
+							"h1title": "FontMassive Pack Installer v" + pkg.version,
 							"description": "Очень хороший набор программ. Особенно пользуюсь FontMassive и FonTemp, т. к. большую часть работаю с шаблонами, где используются сторонние шрифты, которых нет в системе.",
 							"keywords": "ProjectSoft, STUDIONIONS, ProjectSoft-STUDIONIONS,FontMassive Pack Installer, FontMassivePack",
 							"nickname": "ProjectSoft",
