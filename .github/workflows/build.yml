@@ -20,7 +20,7 @@ jobs:
       - name: Version
         id: version
         run: |
-          if [ ${{ github.ref_name }} == 'master']; then
+          if [ ${{ github.ref_name }} == master ]; then
             echo "version=test" >> "$GITHUB_OUTPUT"
             exit -1
           else
