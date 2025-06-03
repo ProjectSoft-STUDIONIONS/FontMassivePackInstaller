@@ -9,24 +9,34 @@ on:
         description: 'Version number to build'
         required: true
         default: '3.8.1'
+
+
 jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Version
+        id: version
+        run: |
+          if [ ${{ github.ref_name }} == 'master']; then
+            echo "version=test" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
+          fi
+    outputs:
+      version: ${{ steps.version.outputs.version}}
+
   build:
-    name: Build
+    needs: check
     runs-on: windows-latest
     strategy:
       matrix:
         node-version: [18.x]
 
     steps:
-      - name: Exit if on master
-        if: endsWith(github.ref, 'master') == true
-        run: exit -1
-      - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Hello ${{ github.ref_name }}
+      - name: Hello ${{ needs.check.outputs.version }}
         run: |
           mkdir installer
 
@@ -39,6 +49,6 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: installer/FontMassivePack.exe
-          tag: ${{ github.ref_name }}
+          tag: ${{ githubneeds.check.outputs.version }}
           overwrite: true
           file_glob: true
