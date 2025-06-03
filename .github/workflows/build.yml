@@ -26,12 +26,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Hello Step
         run: echo "Hello ${{ github.event.inputs.version }}"
-
+        if: endsWith(github.ref_name, 'master') == true
+        run: exit -1
       - name: Build
         run: |
           npm run inst
           npm run build
-      if: ${{ github.ref_name != 'master' }}
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
