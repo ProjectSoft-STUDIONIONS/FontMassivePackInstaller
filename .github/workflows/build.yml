@@ -8,7 +8,7 @@ on:
       version:
         description: 'Version number to build'
         required: true
-        default: '0.0.0'
+        default: '3.8.1'
 jobs:
   build:
     name: Build
