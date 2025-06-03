@@ -36,12 +36,15 @@ jobs:
         node-version: [18.x]
 
     steps:
+      - uses: actions/checkout@v4
+      - run: mkdir installer
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: Hello ${{ needs.check.outputs.version }}
         run: |
           mkdir installer
-
-      - name: Build
-        run: |
           npm run inst
           npm run build
       - name: Upload binaries to release
