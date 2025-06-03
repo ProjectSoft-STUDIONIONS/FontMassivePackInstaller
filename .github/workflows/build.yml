@@ -26,9 +26,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Hello Step
+      - name: Hello ${{ github.ref_name }}
         run: |
-          echo "Hello ${{ github.ref_name }}"
           mkdir installer
 
       - name: Build
