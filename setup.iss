@@ -21,7 +21,7 @@ AppSupportURL={#AppUrl}
 AppContact={#AppEmail}
 AppComments=Сборка установки программы {#AppName}
 AppReadmeFile={app}\FM3_Data\Readme_ru.txt
-InfoBeforeFile=source\History.rtf
+InfoBeforeFile=source\FontMassive Pack\FM3_data\History_ru.txt
 
 VersionInfoVersion={#AppVersion}
 VersionInfoCompany={#AppName}
@@ -104,9 +104,8 @@ Name: {app}\FD_Data
 Name: {app}\LT_data
 
 [Files]
-Source: embed\splash.bmp; DestDir: {tmp}; Flags: deleteafterinstall noencryption dontcopy
 Source: embed\icon.ico; DestDir: {app}; DestName: icon.ico     
-Source: source\History.rtf; DestDir: {app}; DestName: History.rtf
+Source: {#Source}\FM3_data\History_ru.txt; DestDir: {app}; DestName: History_ru.txt
 Source: {#Source}\FontCache_Restore.cmd; DestDir: {app}; DestName: FontCache_Restore.cmd
 Source: {#Source}\FontCache_Stop.cmd; DestDir: {app}; DestName: FontCache_Stop.cmd
 
@@ -151,6 +150,6 @@ Type: filesandordirs; Name: {app}
 
 [Run]
 Filename: {app}\FonTemp.EXE; Description: {cm:FonTempRun, Font Temp Run}; Flags: postinstall nowait skipifsilent unchecked
-Filename: {app}\FontMassive.EXE; Description: {cm:FonTempRun, Font Massive Run}; Flags: postinstall nowait skipifsilent runminimized unchecked
+Filename: {app}\FontMassive.EXE; Description: {cm:FontMassiveRun, Font Massive Run}; Flags: postinstall nowait skipifsilent runminimized unchecked
 Filename: {app}\FM3_Data\Readme_ru.txt; Description: {cm:ReadmeRun, Readme Run}; Flags: postinstall shellexec skipifsilent unchecked
-Filename: {app}\History.rtf; Description: {cm:HistoryRun, History Run}; Flags: postinstall shellexec skipifsilent unchecked
+Filename: {app}\FM3_data\History_ru.txt; Description: {cm:HistoryRun, History Run}; Flags: postinstall shellexec skipifsilent unchecked
