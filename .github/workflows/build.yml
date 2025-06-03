@@ -19,15 +19,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir installer
-      - if: endsWith(github.ref_name, 'master') == true
-      - run: exit -1
+        if: endsWith(github.ref_name, 'master') == true
+        run: exit -1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: Hello Step
-        run: echo "Hello ${{ github.event.inputs.name }}"
+        run: |
+          echo "Hello ${{ github.event.inputs.name }}"
+          mkdir installer
 
       - name: Build
         run: |
