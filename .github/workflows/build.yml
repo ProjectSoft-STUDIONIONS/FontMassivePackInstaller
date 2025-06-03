@@ -22,6 +22,7 @@ jobs:
         run: |
           if [ ${{ github.ref_name }} == 'master']; then
             echo "version=test" >> "$GITHUB_OUTPUT"
+            exit -1
           else
             echo "version=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
           fi
