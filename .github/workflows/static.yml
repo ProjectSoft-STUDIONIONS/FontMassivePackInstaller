@@ -2,8 +2,6 @@
 name: Build and Deploy static content to Pages 🛠️
 
 on: 
-  release:
-    types: [ created ]
   workflow_dispatch:
     inputs:
       version:
