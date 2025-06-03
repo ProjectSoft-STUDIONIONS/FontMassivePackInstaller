@@ -18,9 +18,9 @@ jobs:
         node-version: [18.x]
 
     steps:
-      - name: Exit if not on production branch
+      - name: Exit if on master
         if: endsWith(github.ref, 'master') == true
-        run: exit -1
+        run: exit 0
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
