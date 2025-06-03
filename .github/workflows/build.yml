@@ -25,7 +25,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Hello Step
         run: |
-          echo "Hello ${{ github.event.inputs.version }}"
+          echo "Hello ${{ github.ref_name }}"
           mkdir installer
 
       - name: Build
