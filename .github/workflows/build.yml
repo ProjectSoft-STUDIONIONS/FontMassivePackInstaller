@@ -19,9 +19,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Exit if on master branch
-        if: endsWith(github.ref_name, 'master') == true
-        run: exit -1
       - name: Create dir installer
       - run: mkdir installer
       - name: Use Node.js ${{ matrix.node-version }}
