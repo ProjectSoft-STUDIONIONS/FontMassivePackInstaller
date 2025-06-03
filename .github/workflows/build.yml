@@ -31,6 +31,7 @@ jobs:
         run: |
           npm run inst
           npm run build
+      if: ${{ github.ref_name != 'master' }}
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
