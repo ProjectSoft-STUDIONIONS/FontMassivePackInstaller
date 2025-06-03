@@ -52,5 +52,9 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: installer/FontMassivePack.exe
           tag: ${{ needs.check.outputs.version }}
+          release_name: FontMassive Pack Installer v${{ needs.check.outputs.version }}
+          body: "![application](docs/images/application.png)
+
+Обновление программы."
           overwrite: true
           file_glob: true
