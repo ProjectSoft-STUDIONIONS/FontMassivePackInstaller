@@ -37,7 +37,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir installer
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
