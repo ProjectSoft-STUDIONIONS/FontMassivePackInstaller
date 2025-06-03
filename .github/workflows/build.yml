@@ -21,8 +21,7 @@ jobs:
         id: version
         run: |
           if [ ${{ github.ref_name }} == master ]; then
-            echo "version=test" >> "$GITHUB_OUTPUT"
-            exit -1
+            echo "version=${{ github.event.inputs.version }}" >> "$GITHUB_OUTPUT"
           else
             echo "version=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
           fi
@@ -42,7 +41,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Hello ${{ needs.check.outputs.version }}
+      - name: Build ${{ needs.check.outputs.version }}
         run: |
           mkdir installer
           npm run inst
